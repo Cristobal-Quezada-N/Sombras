@@ -1,5 +1,9 @@
 # Sombras Proyecto
 
+## Clonar el repositorio
+1. Abrir Git
+2. Ejecutar `git clone https://github.com/Cristobal-Camisa-Cuadro/Sombras`
+
 ## Ejecutar Programa
 1. Crear Entorno Virtual:
 ```python3
