@@ -17,7 +17,14 @@ def mapa_inicializar():
                  else{
                      marcador = L.marker().setLatLng(e.latlng).addTo(mapa)
                  }
-                 history.replaceState({}, "", `?lat=${marcador._latlng.lat}&lon=${marcador._latlng.lng}`)
+                 history.replaceState({}, "", `?latlng=${marcador._latlng.lat},${marcador._latlng.lng}`)
+                 fetch(
+                    '/',
+                    {
+                        method: 'POST',
+                        body: marcador._latlng
+                    },
+                 )
              }
          {% endmacro %}"""
          

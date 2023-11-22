@@ -16,7 +16,7 @@
 ```
 - Windows (PowerShell):
 ```powershell
-    source ./bin/Activate.ps1
+    source ./Scripts/Activate.ps1
 ```
 3. Instalar Librerias:
 ```
