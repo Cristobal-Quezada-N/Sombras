@@ -5,6 +5,11 @@
 ```sh
 git clone https://github.com/Cristobal-Camisa-Cuadro/Sombras
 ```
+o descargar el archivo zip desde `https://github.com/Cristobal-Camisa-Cuadro/Sombras`,
+apretando el boton 'Code' > 'Download ZIP', y extraer la carpeta `Sombra-main`.
+
+2. Cambiar al directorio `cd Sombras` , o abrir una terminal/powershell en el directorio
+`Sombra-main`.
 2. Crear Entorno Virtual:
 ```sh
 python -m venv $PWD
