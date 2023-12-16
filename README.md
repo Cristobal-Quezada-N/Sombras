@@ -6,34 +6,36 @@
 git clone https://github.com/Cristobal-Camisa-Cuadro/Sombras
 ```
 o descargar el archivo zip desde `https://github.com/Cristobal-Camisa-Cuadro/Sombras`,
-apretando el boton 'Code' > 'Download ZIP', y extraer la carpeta `Sombra-main`.
+apretando el boton verde 'Code' > 'Download ZIP', y extraer la carpeta `Sombra-main`.
 
 2. Cambiar al directorio `cd Sombras` , o abrir una terminal/powershell en el directorio
 `Sombra-main`.
-2. Crear Entorno Virtual:
+(Opcional) Crear Entorno Virtual, esto permite contener las librerias en el directorio, y no de forma global:
 ```sh
 python -m venv $PWD
 ```
-3. Ejecutar Entorno Virtual:
-- Linux, MacOS (Bash):
+- Ejecutar Entorno Virtual:
+Linux, MacOS (Bash):
 ```sh
 source ./bin/activate
 ```
-- Windows (PowerShell):
+Windows (PowerShell):
 ```powershell
-source ./Scripts/Activate.ps1
+.\Scripts\Activate.ps1
 ```
 3. Instalar Librerias:
 ```sh
 python -m pip install -r requirements.txt
 ```
-4. Ejecutar Servidor:
+
+## Manual de Uso
+1. Ejecutar Servidor:
 ```sh
 python ./src/server.py
 ```
+2. Visualizar la Pagina en `http://127.0.0.1:5000`
+3. Hacer click en el mapa.
+4. Listo!
 
-## Manual de Uso
-
-1. Visualizar la Pagina en `http://127.0.0.1:5000`
-2. Hacer click en el mapa.
-3. Listo!
+Notar:
+- Si sale del rango de la Universidad y quiere volver, recargue la pagina.
