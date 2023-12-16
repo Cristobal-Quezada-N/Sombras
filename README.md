@@ -1,27 +1,30 @@
 # Sombras Proyecto
 
 ## Manual de Instalación
-1. Clonar el repositorio `git clone https://github.com/Cristobal-Camisa-Cuadro/Sombras`
+1. Clonar el repositorio:
+```sh
+git clone https://github.com/Cristobal-Camisa-Cuadro/Sombras
+```
 2. Crear Entorno Virtual:
-```python3
-    python -m venv $PWD
+```sh
+python -m venv $PWD
 ```
 3. Ejecutar Entorno Virtual:
 - Linux, MacOS (Bash):
 ```sh
-    source ./bin/activate
+source ./bin/activate
 ```
 - Windows (PowerShell):
 ```powershell
-    source ./Scripts/Activate.ps1
+source ./Scripts/Activate.ps1
 ```
 3. Instalar Librerias:
-```
-    python -m pip install -r requirements.txt
+```sh
+python -m pip install -r requirements.txt
 ```
 4. Ejecutar Servidor:
-```python3
-    python ./src/server.py
+```sh
+python ./src/server.py
 ```
 
 ## Manual de Uso
