@@ -1,3 +1,4 @@
 folium
 flask
 jinja2
+pysolar
