@@ -1,15 +1,12 @@
 # Sombras Proyecto
 
-## Clonar el repositorio
-1. Abrir Git
-2. Ejecutar `git clone https://github.com/Cristobal-Camisa-Cuadro/Sombras`
-
-## Ejecutar Programa
-1. Crear Entorno Virtual:
+## Manual de Instalación
+1. Clonar el repositorio `git clone https://github.com/Cristobal-Camisa-Cuadro/Sombras`
+2. Crear Entorno Virtual:
 ```python3
     python -m venv $PWD
 ```
-2. Ejecutar Entorno Virtual:
+3. Ejecutar Entorno Virtual:
 - Linux, MacOS (Bash):
 ```sh
     source ./bin/activate
@@ -26,5 +23,9 @@
 ```python3
     python ./src/server.py
 ```
-5. Visualizar la Pagina en `http://127.0.0.1:5000`
 
+## Manual de Uso
+
+1. Visualizar la Pagina en `http://127.0.0.1:5000`
+2. Hacer click en el mapa.
+3. Listo!
