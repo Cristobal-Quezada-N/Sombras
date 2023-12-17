@@ -2,3 +2,4 @@ folium
 flask
 jinja2
 pysolar
+pytz
