@@ -23,7 +23,9 @@ mapa = mapa_constructor()
 def index():
     if request.method == 'POST':
         coordenadas = request.get_json() # coordenadas: { 'lat' : <float>, 'lng': <float> }
+        print('---------------------\n')
         print(f"[i] Coordenadas: {coordenadas}")
+        print('\n---------------------\n')
         info = info_sol(coordenadas)
         socketio.emit('info', { 'data': info })
     return pagina_template(mapa)
@@ -43,14 +45,18 @@ def pagina_template(mapa):
 @socketio.on('connect')
 def conexion():
     # global thread
+    print('---------------------\n')
     print('[i] Cliente Conectado')
+    print('\n---------------------\n')
 # [TODO]: gestionar ubicacion
 #    with thread_detectado:
 #        if thread is None:
 #            thread = socketio.start_background_task(pedir_ubicacion)
 
 def disconnect():
+    print('---------------------\n')
     print('[i] Client disconnected')
+    print('\n---------------------\n')
 
 
 # Ejecutar el servidor si se ejecuta el archivo (server.py)
