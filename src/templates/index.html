@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- headers del Mapa Folium -->
+    {{ headers | safe }}
+    <!-- Scripts para librerias. Permiten interactuar con el DOM y comunicar al Servidor -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"
+        integrity="sha384-mZLF4UVrpi/QTWPA7BjNPEnkIfRFn4ZEO3Qt/HFklTJBj/gBOV8G3HcKn4NfQblz"
+        crossorigin="anonymous"></script>
+
+    <!-- Instanciar el Sokcet que escuchara al Servidor Flask -->
+    <script>
+        // Cuando el DOM se cargue
+        $(document).ready(function () {
+            console.log("SOCKET")
+            var socket = io.connect()
+            // Al recibir informacion cambiara el contenido de un div.
+            socket.on('info', function (msg) {
+                //console.log("[i] Informacion recibida: " + msg.data)
+                document.getElementById("INFO").innerHTML = msg.data;
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <h1>USACH INFORMACIÓN SOLAR</h1>
+    <!-- Mapa Folium-->
+    {{ mapa | safe }}
+    <div style="display: block;" id="INFO">Haz click en el mapa </div>
+    <!-- Scripts del Mapa Folium-->
+    <script>
+        {{ scripts | safe }}
+    </script>
+</body>
+
+</html>
