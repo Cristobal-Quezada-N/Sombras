@@ -1,0 +1,28 @@
+{% macro script(this, kwargs) %}
+    mapa = {{this._parent.get_name()}}
+    mapa.on('click', onClick);
+    function onClick(e){
+                                                                                                  
+    // Actualizar la posición del marcador
+                                                                                                  
+        if (typeof marcador != 'undefined'){
+            marcador.setLatLng(e.latlng)
+        }
+        else{
+            marcador = L.marker().setLatLng(e.latlng).addTo(mapa)
+        }
+                                                                                                  
+        // Actualizar parametros en url
+        //history.replaceState({}, "", `?latlng=${marcador._latlng.lat},${marcador._latlng.lng}`)
+                                                                                                  
+    // Comunicar las coordenadas al Servidor
+        $.ajax({
+            type : "POST",
+            data: JSON.stringify(marcador._latlng),
+            contentType: 'application/json',
+            //success: function() {
+            //    console.log(marcador._latlng);
+            //    }
+        });
+    }
+{% endmacro %}

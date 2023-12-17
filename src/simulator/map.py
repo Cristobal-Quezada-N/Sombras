@@ -16,39 +16,9 @@ def mapa_constructor(location=[-33.4477, -70.685585], zoom=16):
         width=1900,
     )
     # Extender la funcionalidad del Marcador de Mapa
-    _templateClickForMarker = """
-    {% macro script(this, kwargs) %}
-        mapa = {{this._parent.get_name()}}
-        mapa.on('click', onClick);
-        function onClick(e){
-
-        // Actualizar la posición del marcador
-
-            if (typeof marcador != 'undefined'){
-                marcador.setLatLng(e.latlng)
-            }
-            else{
-                marcador = L.marker().setLatLng(e.latlng).addTo(mapa)
-            }
-
-            // Actualizar parametros en url
-            //history.replaceState({}, "", `?latlng=${marcador._latlng.lat},${marcador._latlng.lng}`)
-
-        // Comunicar las coordenadas al Servidor
-            $.ajax({
-                type : "POST",
-                data: JSON.stringify(marcador._latlng),
-                contentType: 'application/json',
-                //success: function() {
-                //    console.log(marcador._latlng);
-                //    }
-            });
-        }
-    {% endmacro %}
-    """
-
-    folium.ClickForMarker._template = Template(_templateClickForMarker)
-    folium.ClickForMarker().add_to(mapa_constructor)
+    with open('./src/templates/Ext-ClickForMarker.html.jinja2', 'r') as template_marker:
+        folium.ClickForMarker._template = Template(template_marker.read())
+        folium.ClickForMarker().add_to(mapa_constructor)
 
 
     # Seoarar los componentes del mapa
