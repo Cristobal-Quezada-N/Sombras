@@ -6,8 +6,8 @@ import datetime
 
 def info_sol(coordenadas):
     info = []
-    latitude_deg = float(coordenadas[0])
-    longitude_deg = float(coordenadas[1])
+    lat = coordenadas['lat']
+    lng = coordenadas['lng']
 
     fecha = datetime.date.today()
     
@@ -26,7 +26,7 @@ def info_sol(coordenadas):
         date = datetime.datetime(año, mes, dia, hora, minuto, segundo, tzinfo=pytz.timezone('America/Santiago'))
         
         # altitud sol
-        altitude_deg = get_altitude(latitude_deg, longitude_deg, date)
+        altitude_deg = get_altitude(lat, lng, date)
         # Radicion directa
 
         result = get_radiation_direct(date, altitude_deg)

@@ -20,24 +20,25 @@ def mapa_constructor(location=[-33.4477, -70.685585], zoom=16):
 
             // Actualizar la posición del marcador
 
-               if (typeof marcador != 'undefined'){
-                   marcador.setLatLng(e.latlng)
-               }
-               else{
-                   marcador = L.marker().setLatLng(e.latlng).addTo(mapa)
-               }
+                if (typeof marcador != 'undefined'){
+                    marcador.setLatLng(e.latlng)
+                }
+                else{
+                    marcador = L.marker().setLatLng(e.latlng).addTo(mapa)
+                }
 
-               // Actualizar parametros en url
-               history.replaceState({}, "", `?latlng=${marcador._latlng.lat},${marcador._latlng.lng}`)
+                // Actualizar parametros en url
+                //history.replaceState({}, "", `?latlng=${marcador._latlng.lat},${marcador._latlng.lng}`)
 
             // Comunicar las coordenadas al Servidor
-               fetch(
-                  '/',
-                  {
-                      method: 'POST',
-                      body: marcador._latlng
-                  },
-               )
+                $.ajax({
+                    type : "POST",
+                    data: JSON.stringify(marcador._latlng),
+                    contentType: 'application/json',
+                    success: function() {
+                        console.log(marcador._latlng);
+                        }
+                });
             }
         {% endmacro %}
         """
