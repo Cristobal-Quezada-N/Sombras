@@ -20,8 +20,20 @@
             var socket = io.connect()
             // Al recibir informacion cambiara el contenido de un div.
             socket.on('info', function (msg) {
-                //console.log("[i] Informacion recibida: " + msg.data)
-                document.getElementById("INFO").innerHTML = msg.data;
+                // console.log("[i] Informacion recibida: " + msg);
+                intervalos = msg.intervalos[0];
+                document.getElementById("MAYOR-INTERVALO-H1").innerHTML = "Mayor Intervalo: ";
+                document.getElementById("MAYOR-INTERVALO").innerHTML = msg.mayor;
+                document.getElementById("INFO-H1").innerHTML = "Intervalos: ";
+                document.getElementById("INFO").innerHTML = '';
+
+                // Colocar cada intervalo de hora
+                for (intervalo in intervalos) {
+                    parrafo = document.createElement('p')
+                    texto = document.createTextNode(intervalos[intervalo])
+                    parrafo.appendChild(texto)
+                    document.getElementById('INFO').appendChild(parrafo)
+                }
             })
         })
     </script>
@@ -31,10 +43,14 @@
     <h1>USACH INFORMACIÓN SOLAR</h1>
     <!-- Mapa Folium-->
     {{ mapa | safe }}
-    <div style="display: block;" id="INFO">Haz click en el mapa </div>
+    <h1 id="MAYOR-INTERVALO-H1">Haz click en el mapa</h1>
+    <div style="display: block;" id="MAYOR-INTERVALO"></div>
+
+    <h1 style="display: block;" id="INFO-H1"></h1>
+    <div style="display: block;" id="INFO"></div>
     <!-- Scripts del Mapa Folium-->
     <script>
-        {{ scripts | safe }}
+        {{scripts | safe} }
     </script>
 </body>
 

@@ -4,6 +4,7 @@ from simulator.map import mapa_constructor
 from simulator.sombra import info_sol
 
 from flask_socketio import SocketIO
+
 # from threading import Lock
 
 # Instanciar el servidor y manejar hilos para conexiones
@@ -27,7 +28,8 @@ def index():
         print(f"[i] Coordenadas: {coordenadas}")
         print('\n----------------------------------------------------------------------\n')
         info = info_sol(coordenadas)
-        socketio.emit('info', { 'data': info })
+        # Se envian datos al Cliente
+        socketio.emit('info', { 'mayor': info[0], 'intervalos': info[1:] })
     return pagina_template(mapa)
 
 
@@ -38,9 +40,6 @@ def pagina_template(mapa):
                            scripts =mapa['scripts'],
                            mapa    =mapa['body']
                            )
-
-
-
 # Manejar conexiones
 @socketio.on('connect')
 def conexion():
