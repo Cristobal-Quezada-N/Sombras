@@ -8,7 +8,8 @@ git clone https://github.com/Cristobal-Camisa-Cuadro/Sombras
 o descargar el archivo zip desde `https://github.com/Cristobal-Camisa-Cuadro/Sombras`,
 apretando el boton verde 'Code' > 'Download ZIP', y extraer la carpeta `Sombra-main`.
 
-2. Cambiar al directorio `cd Sombras` , o abrir una terminal/powershell en el directorio
+2. Cambiar al directorio `cd Sombras` , o abrir una terminal/powershell en el directorio (apretar el boton shift y dar click derecho en la carpeta,
+luego seleccionar 'Abrir la ventana de PowerShell aquí')
 `Sombra-main`.
 (Opcional) Crear Entorno Virtual, esto permite contener las librerias en el directorio, y no de forma global:
 ```sh
