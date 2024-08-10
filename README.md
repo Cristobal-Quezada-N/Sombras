@@ -18,11 +18,11 @@ python -m venv .venv
 - Ejecutar Entorno Virtual:
 Linux, MacOS (Bash):
 ```sh
-source ./bin/activate
+source ./.venv/bin/activate
 ```
 Windows (PowerShell):
 ```powershell
-.\Scripts\Activate.ps1
+.\.venv\Scripts\Activate.ps1
 ```
 3. Instalar Librerias:
 ```sh
