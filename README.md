@@ -13,7 +13,7 @@ luego seleccionar 'Abrir la ventana de PowerShell aquí')
 `Sombra-main`.
 (Opcional) Crear Entorno Virtual, esto permite contener las librerias en el directorio, y no de forma global:
 ```sh
-python -m venv $PWD
+python -m venv .venv
 ```
 - Ejecutar Entorno Virtual:
 Linux, MacOS (Bash):
